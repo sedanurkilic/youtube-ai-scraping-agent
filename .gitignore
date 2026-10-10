@@ -1,0 +1,28 @@
+# secrets
+.env
+
+# environments / caches
+.venv*/
+__pycache__/
+*.pyc
+.cache/
+
+# raw scrape output (copyrighted lyrics must never be committed)
+spike_output/
+
+# local run outputs / logs
+result*.json
+*_log*.txt
+*_output*.txt
+hash_result.txt
+calibration_log.json
+.DS_Store
+
+# local run outputs / logs
+result*.json
+*_log*.txt
+*_output*.txt
+hash_result.txt
+calibration_log.json
+.DS_Store
+.vscode/

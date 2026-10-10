@@ -1,0 +1,8 @@
+einops==0.8.2
+numpy==2.5.3
+python-dotenv==1.2.4
+requests==2.34.2
+sentence-transformers==3.1.1
+tiktoken==0.14.0
+torch==2.14.1
+transformers==4.44.2

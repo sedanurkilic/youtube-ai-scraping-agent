@@ -1,0 +1,38 @@
+{
+  "_comment": "Ground truth for the album-discovery step. Expected values come from independent sources (retail/vinyl listings, Wikipedia mirrors), NOT from the LLM. `required` = core tracks all sources agree on, in original order. `optional` = tracks present on some editions; tolerated only AFTER the required ones. Anything else (bonus/remix/reissue tracks) must make the test fail. Verified on 2026-10-10. URLs for the 2nd and 3rd case were written from memory and are guarded by expect_title_contains.",
+  "cases": [
+    {
+      "id": "madonna_borderline",
+      "url": "https://www.youtube.com/watch?v=rSaC-YbSDpo",
+      "expect_title_contains": "Borderline",
+      "artist": "Madonna",
+      "album": "Madonna",
+      "required": ["Lucky Star", "Borderline", "Burning Up", "I Know It", "Holiday", "Think of Me", "Physical Attraction", "Everybody"],
+      "optional": [],
+      "verified_with": ["musicdirect.com", "dutchvinyl.com.au", "realgroovy.com", "prostudiomasters.com"],
+      "notes": "Assessment URL. Prompt v1 wrongly added 'Stay' (9 tracks)."
+    },
+    {
+      "id": "rihanna_umbrella",
+      "url": "https://www.youtube.com/watch?v=CvBfHwUxHIk",
+      "expect_title_contains": "Umbrella",
+      "artist": "Rihanna",
+      "album": "Music of the Sun",
+      "required": ["Pon de Replay", "Here I Go Again", "If It's Lovin' That You Want", "You Don't Love Me (No, No, No)", "That La, La, La", "The Last Time", "Willing to Wait", "Music of the Sun", "Let Me", "Rush", "There's a Thug in My Life"],
+      "optional": ["Now I Know"],
+      "verified_with": ["virginmegastore.ae (11 tracks)", "id.wikipedia.com (12 tracks, adds Now I Know)", "musicdirect.com (13 tracks, adds Pon de Replay (Remix))", "thesoundofvinyl.com"],
+      "notes": "Later-album video (Good Girl Gone Bad) on a VEVO-style channel; first album's edition is genuinely ambiguous (11/12/13). The remix must NOT appear."
+    },
+    {
+      "id": "adele_rolling_in_the_deep",
+      "url": "https://www.youtube.com/watch?v=rYEDA3JcQqw",
+      "expect_title_contains": "Rolling in the Deep",
+      "artist": "Adele",
+      "album": "19",
+      "required": ["Daydreamer", "Best for Last", "Chasing Pavements", "Cold Shoulder", "Crazy for You", "Melt My Heart to Stone", "First Love", "Right as Rain", "Make You Feel My Love", "My Same", "Tired", "Hometown Glory"],
+      "optional": [],
+      "verified_with": ["pop-music.ca", "raygum.com", "firstcityrecordstore.com", "waitingroomrecords.com", "simple.wikipedia.com"],
+      "notes": "Later-album video (21). Special editions add 'That's It I Quit I'm Movin' On', 'Now and Then', 'Painting Pictures' as bonus tracks; they must NOT appear."
+    }
+  ]
+}
